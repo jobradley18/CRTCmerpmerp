@@ -1,2 +1,0 @@
-print "stuff about stuff write story"
-
