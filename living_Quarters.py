@@ -39,3 +39,87 @@ while True:
 
     break
     
+    
+    
+    
+# -*- coding: utf-8 -*-
+#beginning of encounter
+
+
+
+
+
+
+print("You encounter a giant fluffy crab")
+print("It seems angry for some reason")
+print("How will you defend yourself?")
+def crab():
+    #Making Crab
+    print(" /\\   @ @")
+    print("( /   | |    ()")
+    print(" \\  __| |__  / ")
+    print('  -/   "   \\-')
+    print(" /-|       |-\\")
+    print("/ /-\     /-\ \\")
+    print(" / /-`---'-\ \\")
+    print("  /         \\")
+#default for the health of the crab
+crabhealth = ["#", "#", "#",]
+def health():
+    #Displays the health of the crab
+    print("")
+    print("")
+    print("Crab health: " + str(crabhealth))
+
+p1health = ["#", "#", "#",]
+def phealth():
+    #Displays the health of the crab
+    print("")
+    print("")
+    print("Player health: " + str(p1health))
+
+health()
+crab()
+phealth()
+
+import tkinter as tk
+
+root = tk.Tk()
+
+
+
+def attack():
+    print("You swing your sword at the crab, hitting it derectly")
+    crabhealth.remove(crabhealth[-1])
+    if len(crabhealth) == 0:
+        end()  
+    else:
+        health()
+        crab()
+def end():
+    print("Your swift abilities have caused the crab to faint, well done")
+    root.destroy()
+
+
+
+def talk():
+    print("The crab does not seem to understand you and clacks its claws viciously")
+    health()
+    crab()
+def run():
+    print("You try to run away but the crab prevents you with some form of hypnotics")
+    health()
+    crab()
+    
+button = tk.Button(root, text='Attack', width=25, command=lambda: attack())
+button2 = tk.Button(root, text='Talk', width=25, command=lambda: talk())
+button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
+#Note that without the lambda: in the command line it will do nothing
+
+
+#Don't forget to pack!
+button.pack()
+button2.pack()
+button3.pack()
+#Run the system
+root.mainloop()
