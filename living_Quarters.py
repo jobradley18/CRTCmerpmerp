@@ -15,7 +15,7 @@ while True:
         input("Wth the key in hand you approach the large wooden trunk.")
         input("You insert the key hopefully into the old lock on the front.")
         input("In the trunk you find a collection of NOTEBOOKS, PENS, a  SMALL DAGGER,")
-    else
+    else:
         input("This trunk requires a KEY")
 
     trunk = ["Notebook", "Pen","Dagger"]
