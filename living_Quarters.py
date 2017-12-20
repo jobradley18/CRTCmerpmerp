@@ -8,3 +8,4 @@ input("There are two rows of beds on either side of the room.")
 input("Eight beds in total each with pristine white sheets")
 input("There is a pillow at the head of each bed and a chest at the foot.")
 input("Everything is still, too still...")
+
