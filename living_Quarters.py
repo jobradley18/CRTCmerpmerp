@@ -6,4 +6,18 @@ while True:
     input("Eight beds in total each with pristine white sheets")
     input("There is a pillow at the head of each bed and a chest at the foot.")
     input("Everything is still, too still...")
+
+
+    
+    inventory = ["key"]
+
+    if "key" in inventory: 
+        input("Wth the key in hand you approach the large wooden trunk.")
+        input("You insert the key hopefully into the old lock on the front.")
+        input("In the trunk you find a collection of NOTEBOOKS, PENS, a  SMALL DAGGER,")
+    else
+        input("This trunk requires a KEY")
+
+    trunk = ["Notebook", "Pen","Dagger"]
+    
     continue
