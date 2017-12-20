@@ -21,3 +21,5 @@ while True:
     trunk = ["Notebook", "Pen","Dagger"]
     
     continue
+    
+inventory.extend(trunk)
