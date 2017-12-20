@@ -1,5 +1,12 @@
 ########################################################
 
+def check_Inventory():
+    print (inventory)
+
+
+
+########################################################
+
 while True:
     input("You are decending in an old elevator. Slowly, it creaks to a stop and the doors open.")
     input("You are greeted with the rancid smell of teen's sweat.")
@@ -11,6 +18,13 @@ while True:
     
 ########################################################
 
+    import tkinter as tk
+
+    root_Inventory = tk.Tk()
+
+    button = tk.Button(root_Inventory, text='Inventory', width=25, command=lambda: check_Inventory())
+    button.pack()
+    root_Inventory.mainloop()
     inventory = [] 
     input("The bed...")
     input("Its pressence calls out to you.")
@@ -23,6 +37,9 @@ while True:
             break
         elif investigate.lower() == "no":
             break
+
+    
+
 
 ########################################################
 
