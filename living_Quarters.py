@@ -56,33 +56,35 @@ while True:
 
 
 
-print("You encounter a giant fluffy crab")
-print("It seems angry for some reason")
-print("How will you defend yourself?")
+input("You turn around to encounter a giant, fluffy crab.")
+input("It seems to have been hiding in one of the trunks behind you")
+input("It stands menacingly between you and the elevator door.")
+input("How will you defend yourself?")
 def crab():
     #Making Crab
-    print(" /\\   @ @")
-    print("( /   | |    ()")
-    print(" \\  __| |__  / ")
-    print('  -/   "   \\-')
-    print(" /-|       |-\\")
-    print("/ /-\     /-\ \\")
-    print(" / /-`---'-\ \\")
-    print("  /         \\")
+    input(" /\\   @ @")
+    input("( /   | |    ()")
+    input(" \\  __| |__  / ")
+    input('  -/   "   \\-')
+    input(" /-|       |-\\")
+    input("/ /-\     /-\ \\")
+    input(" / /-`---'-\ \\")
+    input("  /         \\")
 #default for the health of the crab
 crabhealth = ["#", "#", "#",]
 def health():
     #Displays the health of the crab
-    print("")
-    print("")
-    print("Crab health: " + str(crabhealth))
+        input(" / /-`---'-\ \\")
+    input("")
+    input("")
+    input("Crab health: " + str(crabhealth))
 
 p1health = ["#", "#", "#",]
 def phealth():
     #Displays the health of the crab
-    print("")
-    print("")
-    print("Player health: " + str(p1health))
+    input("")
+    input("")
+    input("Player health: " + str(p1health))
 
 health()
 crab()
@@ -95,7 +97,7 @@ root = tk.Tk()
 
 
 def attack():
-    print("You swing your sword at the crab, hitting it derectly")
+    input("You jab your DAGGER at the crab, hitting it directly")
     crabhealth.remove(crabhealth[-1])
     if len(crabhealth) == 0:
         end()  
@@ -103,20 +105,20 @@ def attack():
         health()
         crab()
 def end():
-    print("Your swift abilities have caused the crab to faint, well done")
+    input("Your swift abilities have caused the crab to faint, well done")
     root.destroy()
 
 
 
 def talk():
-    print("The crab does not seem to understand you and clacks its claws viciously")
+    input("The crab does not seem to understand you and clacks its claws viciously")
     health()
     crab()
 def run():
-    print("You try to run away but the crab prevents you with some form of hypnotics")
+    input("You try to run away but the crab prevents you with some form of hypnotics")
     health()
     crab()
-   
+    
 button = tk.Button(root, text='Attack', width=25, command=lambda: attack())
 button2 = tk.Button(root, text='Talk', width=25, command=lambda: talk())
 button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
@@ -124,8 +126,8 @@ button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
 
 
 #Don't forget to pack!
-button.pack(side="left")
-button2.pack(side="left")
-button3.pack(side="left")
+button.pack()
+button2.pack()
+button3.pack()
 #Run the system
 root.mainloop()
