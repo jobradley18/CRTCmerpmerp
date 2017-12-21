@@ -45,21 +45,20 @@ while True:
 
     break
     
-    
-    
-    
+########################################################
+
 # -*- coding: utf-8 -*-
 #beginning of encounter
 
-
-
-
-
+########################################################
 
 input("You turn around to encounter a giant, fluffy crab.")
 input("It seems to have been hiding in one of the trunks behind you")
 input("It stands menacingly between you and the elevator door.")
 input("How will you defend yourself?")
+
+#########################################################
+
 def crab():
     #Making Crab
     input(" /\\   @ @")
