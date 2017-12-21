@@ -180,6 +180,7 @@ def exitToFirstFloor():
             print ("Eight beds in total each with pristine white sheets")
             print ("There is a pillow at the head of each bed and a chest at the foot.")
             break
+            in_elevator = False
         elif y == ("press up")and i == 1:
             print ("")
             print ("The doors slowly open revealing that")
