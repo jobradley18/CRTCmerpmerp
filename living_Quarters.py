@@ -8,7 +8,7 @@ def check_Inventory():
 while True:
     input("You are decending in an old elevator. Slowly, it creaks to a stop and the doors open.")
     input("You are greeted with the rancid smell of teen's sweat.")
-    input("An errie white lights line the ceiling, a few flicker as you look on")
+    input("Errie white lights line the ceiling, a few flicker as you look on")
     input("There are two rows of beds on either side of the room.")
     input("Eight beds in total each with pristine white sheets")
     input("There is a pillow at the head of each bed and a chest at the foot.")
@@ -129,3 +129,69 @@ button2.pack()
 button3.pack()
 #Run the system
 root.mainloop()
+
+
+
+
+
+
+
+
+if x == (str("go to elevator")):
+    print("You are now in the elevator..."
+    exitToFirstFloor()
+
+def exitToFirstFloor():
+    print("You are now in the elevator..."
+    x = raw_input("---What would you like to do?  ")
+    in_elevator = True
+    i = 0
+    z = 0
+    while True:
+        y = raw_input("---What would you like to do?  ")
+        if y == ("press up") and in_elevator and i == 0:
+            print ("")
+            print ("The elevator doors close with a thud")
+            print ("it slowly climbs its way back to the first floor")
+            print ("however the doors stay closed.")
+            i = i + 1
+        elif y == ("press down") and i == 1:
+            print ("The elevator is stuck, what would you like to do?")
+        elif y == ("freak out") and z == 0:
+            print ("You scream until you pass out...")
+            print ("When you wake up you feel a lot better")
+            print ("like you could take on the world, by yourself")
+            print ("then you remeber... your on Mars.")
+            z = 1
+        elif y == ("freak out") and z == 1:
+            print ("Please stop freaking out")
+            print ("its becoming very, very, very annoying.")
+            z = 2
+        elif y == ("use elevator"):
+            print ("")
+            print ("What specifically would you like to do?")
+        elif y == ("exit elevator")and i == 0:
+            print ("")
+            print ("You have exited the elevator and are now looking")
+            print ("back at the room with errie white lights")
+            print ("lining the ceiling, a few flicker as you look on")
+            print ("There are two rows of beds on either side of the room.")
+            print ("Eight beds in total each with pristine white sheets")
+            print ("There is a pillow at the head of each bed and a chest at the foot.")
+            break
+        elif y == ("press up")and i == 1:
+            print ("")
+            print ("The doors slowly open revealing that")
+            print ("the elevator is stuck, the first floor is")
+            print ("only visible through the top half of the elevator.")
+            i = i + 1
+        elif y == ("exit elevator")and i == 2:
+            print ("")
+            print ("You have now exited the elevator and")
+            print ("are on the first floor.")
+            in_elevator = False
+            break
+        else:
+            print ("")
+            print ("I'm sorry I do not understand...")
+    
