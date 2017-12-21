@@ -3,8 +3,6 @@
 def check_Inventory():
     print (inventory)
 
-
-
 ########################################################
 
 while True:
@@ -18,13 +16,6 @@ while True:
     
 ########################################################
 
-    import tkinter as tk
-
-    root_Inventory = tk.Tk()
-
-    button = tk.Button(root_Inventory, text='Inventory', width=25, command=lambda: check_Inventory())
-    button.pack()
-    root_Inventory.mainloop()
     inventory = [] 
     input("The bed...")
     input("Its pressence calls out to you.")
@@ -35,12 +26,7 @@ while True:
         if investigate.lower() == "yes":       
             input("You found a KEY")
             inventory.append("KEY")
-            break
         
-
-    
-
-
 ########################################################
 
         trunk = ["NOTEBOOK", "PEN","DAGGER"]
@@ -49,6 +35,7 @@ while True:
             input("You insert the key hopefully into the old lock on the front.")
             input("In the trunk you find a collection of NOTEBOOKS, PENS, and a SMALL DAGGER.")
             inventory.extend(trunk) 
+            break
         else:
             input("You approach a trunk at the foot of one of the beds.")
             input("This trunk requires a KEY")
