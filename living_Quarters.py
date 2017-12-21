@@ -28,7 +28,7 @@ while True:
 
     trunk = ["NOTEBOOK", "PEN","DAGGER"]
     if "KEY" in inventory: 
-        input("Wth the key in hand you approach the large wooden trunk.")
+        input("With the key in hand you approach the large wooden trunk.")
         input("You insert the key hopefully into the old lock on the front.")
         input("In the trunk you find a collection of NOTEBOOKS, PENS, a  SMALL DAGGER,")
         inventory.extend(trunk) 
