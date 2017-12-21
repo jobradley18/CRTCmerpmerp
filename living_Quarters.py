@@ -116,7 +116,7 @@ def run():
     print("You try to run away but the crab prevents you with some form of hypnotics")
     health()
     crab()
-    
+   
 button = tk.Button(root, text='Attack', width=25, command=lambda: attack())
 button2 = tk.Button(root, text='Talk', width=25, command=lambda: talk())
 button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
@@ -124,8 +124,8 @@ button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
 
 
 #Don't forget to pack!
-button.pack()
-button2.pack()
-button3.pack()
+button.pack(side="left")
+button2.pack(side="left")
+button3.pack(side="left")
 #Run the system
 root.mainloop()
