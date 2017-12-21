@@ -61,29 +61,29 @@ input("How will you defend yourself?")
 
 def crab():
     #Making Crab
-    input(" /\\   @ @")
-    input("( /   | |    ()")
-    input(" \\  __| |__  / ")
-    input('  -/   "   \\-')
-    input(" /-|       |-\\")
-    input("/ /-\     /-\ \\")
-    input(" / /-`---'-\ \\")
-    input("  /         \\")
+    print(" /\\   @ @")
+    print("( /   | |    ()")
+    print(" \\  __| |__  / ")
+    print('  -/   "   \\-')
+    print(" /-|       |-\\")
+    print("/ /-\     /-\ \\")
+    print(" / /-`---'-\ \\")
+    print("  /         \\")
 #default for the health of the crab
 crabhealth = ["#", "#", "#",]
 def health():
     #Displays the health of the crab
-        input(" / /-`---'-\ \\")
-    input("")
-    input("")
-    input("Crab health: " + str(crabhealth))
+        print(" / /-`---'-\ \\")
+    print("")
+    print("")
+    print("Crab health: " + str(crabhealth))
 
 p1health = ["#", "#", "#",]
 def phealth():
     #Displays the health of the crab
-    input("")
-    input("")
-    input("Player health: " + str(p1health))
+    print("")
+    print("")
+    print("Player health: " + str(p1health))
 
 health()
 crab()
