@@ -45,16 +45,10 @@ while True:
 
     break
     
-    
-    
-    
+########################################################
+
 # -*- coding: utf-8 -*-
 #beginning of encounter
-
-
-
-
-
 
 print("You encounter a giant fluffy crab")
 print("It seems angry for some reason")
