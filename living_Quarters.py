@@ -15,27 +15,28 @@ while True:
     input("The bed...")
     input("Its pressence calls out to you.")
     input("You notice that something silver underneath the pillow.")
+    
     while True:
-        investigate = input("Do you want to investigate?:")
+        investigate = input("Do you want to investigate the pillow?:")
         if investigate.lower() == "yes":       
             input("You found a KEY")
             inventory.append("KEY")
             break
-        elif investigate.lower() == "no":
-            break
+        
 
 ########################################################
 
-    trunk = ["NOTEBOOK", "PEN","DAGGER"]
-    if "KEY" in inventory: 
-        input("With the key in hand you approach the large wooden trunk.")
-        input("You insert the key hopefully into the old lock on the front.")
-        input("In the trunk you find a collection of NOTEBOOKS, PENS, a  SMALL DAGGER,")
-        inventory.extend(trunk) 
-    else:
-        input("You approach a trunk at the foot of one of the beds.")
-        input("This trunk requires a KEY")
-   
+        trunk = ["NOTEBOOK", "PEN","DAGGER"]
+        if "KEY" in inventory: 
+            input("With the key in hand you approach the large wooden trunk.")
+            input("You insert the key hopefully into the old lock on the front.")
+            input("In the trunk you find a collection of NOTEBOOKS, PENS, and a SMALL DAGGER.")
+            inventory.extend(trunk) 
+        else:
+            input("You approach a trunk at the foot of one of the beds.")
+            input("This trunk requires a KEY")
+            continue
+            
 ########################################################
 
     break
