@@ -33,6 +33,7 @@ while True:
         input("In the trunk you find a collection of NOTEBOOKS, PENS, a  SMALL DAGGER,")
         inventory.extend(trunk) 
     else:
+        input("You approach a trunk at the foot of one of the beds.")
         input("This trunk requires a KEY")
    
 ########################################################
