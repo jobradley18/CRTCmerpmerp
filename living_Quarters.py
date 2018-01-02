@@ -58,78 +58,137 @@ input("It stands menacingly between you and the elevator door.")
 input("How will you defend yourself?")
 
 #########################################################
-
-def crab():
-    #Making Crab
-    print(" /\\   @ @")
-    print("( /   | |    ()")
-    print(" \\  __| |__  / ")
-    print('  -/   "   \\-')
-    print(" /-|       |-\\")
-    print("/ /-\     /-\ \\")
-    print(" / /-`---'-\ \\")
-    print("  /         \\")
+"""
+Odds for fight:
+Run - 100% chance to lose health
+Talk - 25% chance to lose heealth (3 talks = win?(woo the crab?))
+Attack - At full health: 50%
+         At 2 health: 25%
+         At 1 health: 5%
+"""
+import random
+qwerty = False
 #default for the health of the crab
-crabhealth = ["#", "#", "#",]
-def health():
-    #Displays the health of the crab
-        print(" / /-`---'-\ \\")
-    print("")
-    print("")
-    print("Crab health: " + str(crabhealth))
-
-p1health = ["#", "#", "#",]
-def phealth():
-    #Displays the health of the crab
-    print("")
-    print("")
-    print("Player health: " + str(p1health))
-
-health()
-crab()
-phealth()
-
+crabhealth = ["<3", "<3", "<3"]
+p1health = ["<3", "<3", "<3"]
 import tkinter as tk
-
+from tkinter import *
 root = tk.Tk()
-
-
-
+def retry():
+    global p1health
+    global crabhealth
+    p1health = ["<3", "<3", "<3"]
+    crabhealth = ["<3", "<3", "<3"]
+    label2.config(text="Player Health: " + " ".join(p1health))
+    label.config(text="Crab Health: " + " ".join(crabhealth))
+    label0.config(text="")
+    label01.config(text="")
+    button.config(text="Attack", command=lambda: attack())
+    button2.config(text="Talk", command=lambda: talk())
+    button3.config(text="Run", command=lambda: run())
+def death():
+    #Change all buttons to restart fight
+    label0.config(text="You ran out of life, but don't worry you can always try again!")
+    label01.config(text="")
+    button.config(text="Rety", command=lambda: retry())
+    button2.config(text="Rety", command=lambda: retry())
+    button3.config(text="Rety", command=lambda: retry())
 def attack():
-    input("You jab your DAGGER at the crab, hitting it directly")
-    crabhealth.remove(crabhealth[-1])
-    if len(crabhealth) == 0:
-        end()  
-    else:
-        health()
-        crab()
-def end():
-    input("Your swift abilities have caused the crab to faint, well done")
-    root.destroy()
-
-
-
+    label01.config(text="")
+    try:
+        crabhealth.remove(crabhealth[0])
+        label0.config(text="You swing your dagger at the crab, wallopping one of it's eyes")
+        if len(crabhealth) == 0:
+            root.destroy()
+        x = random.randint(1, 20)
+        if len(p1health) == 3:
+            if x <= 10:
+                p1health.remove(p1health[0])
+                crabhealth.append("<3")
+                label0.config(text="You swing at the crab, but your full health made you overconfident")
+                label01.config(text="The crab to pinched you. It hurt a lot...")
+        elif len(p1health) == 2:
+            if x <= 5:
+                p1health.remove(p1health[0])
+                crabhealth.append("<3")
+                label0.config(text="I'm not sure I can validate that swipe as a valid attempt to attack the crab...")
+                label01.config(text="The crab shakes your hand, but it was such firm handshake you take one damage")
+        elif len(p1health) == 1:
+            if x <= 1:
+                p1health.remove(p1health[0])
+                crabhealth.append("<3")
+                label0.config(text="The crab has made you weak at this point, your last stand was simply you collapsing mid swing")
+                label01.config(text="As everything fades to black you see the crab do a celebratory jig")
+                death()
+        label2.config(text="Player Health: " + " ".join(p1health))
+        label.config(text="Crab Health: " + " ".join(crabhealth))
+    except:
+        #As odd as this seems tkinter is spitting out an error as it thinks
+        #It is running after being destroyed but gets confused because
+        #It is destroyed. This just negates the error and ends the fight
+        pass
+y = 0
 def talk():
-    input("The crab does not seem to understand you and clacks its claws viciously")
-    health()
-    crab()
+    label01.config(text="")
+    x = random.randint(1, 4)
+    y += 1
+    label0.config(text="The crab does not seem to understand you and clacks its claws viciously")
+    if x == 1:
+        p1health.remove(p1health[0])
+        label01.config(text="The claws clacked so viciously that it hurt your ears, you lose one health")
+        if len(p1health) == 0:
+            death()
+    elif y == 3 and len(p1health) != 0:
+        qwerty = True
+        try:
+            root.destroy()
+        except:
+            pass
 def run():
-    input("You try to run away but the crab prevents you with some form of hypnotics")
-    health()
-    crab()
-    
+    p1health.remove(p1health[0])
+    if len(p1health) == 0:
+        death()
+    else:
+        label0.config(text="You try to run away but the crab prevents you with some form of hypnotics")
+        label01.config(text="Discouraged from you feable attempt the crab pokes you")
+        label2.config(text="Player Health: " + " ".join(p1health))
+label0 = tk.Label(root, text=" ")
+label0.pack(side=TOP)
+label01 = tk.Label(root, text=" ")
+label01.pack(side=TOP)
+label = tk.Label(root, text="Crab Health: " + " ".join(crabhealth))
+label.pack(side=TOP)
+T = Text(root, height=8, width=16, foreground=("purple"))
+T.pack(side=TOP)
+T.insert(INSERT, """ /\\   @ @
+( /   | |    ()
+ \\  __| |__  /
+  -/   "   \\-
+ /-|       |-\\
+/ /-\     /-\ \\
+ / /-`---'-\ \\
+  /         \\
+""")
+label2 = tk.Label(root, text="Player Health: " + " ".join(p1health))
+label2.pack(side=TOP)
+label3 = tk.Label(root, text=" ")
+label3.pack(side=TOP)
 button = tk.Button(root, text='Attack', width=25, command=lambda: attack())
 button2 = tk.Button(root, text='Talk', width=25, command=lambda: talk())
 button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
 #Note that without the lambda: in the command line it will do nothing
 
 
-#Don't forget to pack!
-button.pack()
-button2.pack()
-button3.pack()
+button.pack(side=LEFT)
+button2.pack(side=LEFT)
+button3.pack(side=LEFT)
 #Run the system
 root.mainloop()
+if qwerty:
+    input("Being the smooth talker you are you somehow convinced the crab to leave you be. Well done")
+else:
+    input("Your swift abilities have caused the crab to faint, well done")
+
 
 
 
