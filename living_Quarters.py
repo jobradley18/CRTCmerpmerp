@@ -129,6 +129,7 @@ def attack():
         pass
 y = 0
 def talk():
+    global y
     label01.config(text="")
     x = random.randint(1, 4)
     y += 1
@@ -139,6 +140,7 @@ def talk():
         if len(p1health) == 0:
             death()
     elif y == 3 and len(p1health) != 0:
+        global qwerty
         qwerty = True
         try:
             root.destroy()
