@@ -200,7 +200,7 @@ else:
 
 
 if x == (str("go to elevator")):
-    print("You are now in the elevator..."
+    print("You are now in the elevator...")
     exitToFirstFloor()
 
 def exitToFirstFloor():
