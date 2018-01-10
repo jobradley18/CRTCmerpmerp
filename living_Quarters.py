@@ -57,7 +57,6 @@ input("It seems to have been hiding in one of the trunks behind you")
 input("It stands menacingly between you and the elevator door.")
 input("How will you defend yourself?")
 
-#########################################################
 """
 Odds for fight:
 Run - 100% chance to lose health
@@ -66,6 +65,7 @@ Attack - At full health: 50%
          At 2 health: 25%
          At 1 health: 5%
 """
+
 import random
 qwerty = False
 #default for the health of the crab
@@ -136,10 +136,11 @@ def talk():
     label0.config(text="The crab does not seem to understand you and clacks its claws viciously")
     if x == 1:
         p1health.remove(p1health[0])
+        label2.config(text="Player Health: " + " ".join(p1health))
         label01.config(text="The claws clacked so viciously that it hurt your ears, you lose one health")
         if len(p1health) == 0:
             death()
-    elif y == 3 and len(p1health) != 0:
+    elif y >= 3 and len(p1health) != 0:
         global qwerty
         qwerty = True
         try:
@@ -179,6 +180,7 @@ button = tk.Button(root, text='Attack', width=25, command=lambda: attack())
 button2 = tk.Button(root, text='Talk', width=25, command=lambda: talk())
 button3 = tk.Button(root, text='Run', width=25, command=lambda: run())
 #Note that without the lambda: in the command line it will do nothing
+
 
 
 button.pack(side=LEFT)
