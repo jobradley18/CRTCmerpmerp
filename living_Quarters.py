@@ -200,63 +200,96 @@ else:
 
 
 
+def enterLivingQuarter():
+    exit = True
+    while exit:
+        global speak
+        speak = raw_input(str("---What would you like to do? "))
+        speak = speak.lower()
+        if speak == "down" or speak == "go down":
+            print("")
+            raw_input("You are decending in an old elevator. Slowly, it creaks to a stop and the doors open.")
+            raw_input("You are greeted with the rancid smell of teen's sweat.")
+            raw_input("Errie white lights line the ceiling, a few flicker as you look on")
+            raw_input("There are two rows of beds on either side of the room.")
+            raw_input("Eight beds in total each with pristine white sheets")
+            raw_input("There is a pillow at the head of each bed and a chest at the foot.")
+            raw_input("Everything is still, too still...")
+            exit = False
+        elif speak == "go up" or speak == "up":
+            print("")
+            raw_input("The elevator begins to move up, then stops suddenly.")
+            raw_input("For a few seconds there is nothing but silence")
+            raw_input("Until the elevator plumits downward moving faster and faster until")
+            raw_input("finally it comes to a complete stop, slowly the doors creak open.")
+            raw_input("You are greeted with the rancid smell of teen's sweat.")
+            raw_input("Errie white lights line the ceiling, a few flicker as you look on")
+            raw_input("There are two rows of beds on either side of the room.")
+            raw_input("Eight beds in total each with pristine white sheets")
+            raw_input("There is a pillow at the head of each bed and a chest at the foot.")
+            raw_input("Everything is still, too still...")
+            exit = False
+        else:
+            print("I do not understand.")
 
-if x == (str("go to elevator")):
-    print("You are now in the elevator...")
-    exitToFirstFloor()
 
 def exitToFirstFloor():
-    print("You are now in the elevator..."
-    x = raw_input("---What would you like to do?  ")
+    print("You are now in the elevator...")
     in_elevator = True
-    i = 0
-    z = 0
-    while True:
-        y = raw_input("---What would you like to do?  ")
-        if y == ("press up") and in_elevator and i == 0:
+    progress = 0
+    freakOut = 0
+    while in_elevator:
+        respond = raw_input("---What would you like to do?  ")
+        if respond == ("press up") and in_elevator and progress == 0:
             print ("")
-            print ("The elevator doors close with a thud")
-            print ("it slowly climbs its way back to the first floor")
-            print ("however the doors stay closed.")
-            i = i + 1
-        elif y == ("press down") and i == 1:
-            print ("The elevator is stuck, what would you like to do?")
-        elif y == ("freak out") and z == 0:
-            print ("You scream until you pass out...")
-            print ("When you wake up you feel a lot better")
-            print ("like you could take on the world, by yourself")
-            print ("then you remeber... your on Mars.")
-            z = 1
-        elif y == ("freak out") and z == 1:
-            print ("Please stop freaking out")
-            print ("its becoming very, very, very annoying.")
-            z = 2
-        elif y == ("use elevator"):
+            raw_input ("The elevator doors close with a thud")
+            raw_input ("it slowly climbs its way back to the first floor")
+            raw_input ("however the doors stay closed.")
+            progress = progress + 1
+        elif respond == ("press down") and progress == 1:
             print ("")
-            print ("What specifically would you like to do?")
-        elif y == ("exit elevator")and i == 0:
+            raw_input ("The elevator is stuck, what would you like to do?")
+        elif respond == ("freak out") and freakOut == 0:
             print ("")
-            print ("You have exited the elevator and are now looking")
-            print ("back at the room with errie white lights")
-            print ("lining the ceiling, a few flicker as you look on")
-            print ("There are two rows of beds on either side of the room.")
-            print ("Eight beds in total each with pristine white sheets")
-            print ("There is a pillow at the head of each bed and a chest at the foot.")
+            raw_input ("You scream until you pass out...")
+            raw_input ("When you wake up you feel a lot better")
+            raw_input ("like you could take on the world, by yourself")
+            raw_input ("then you remeber... your on Mars.")
+            freakOut = 1
+        elif respond == ("freak out") and freakOut == 1:
+            print ("")
+            raw_input ("Please stop freaking out")
+            raw_input ("its becoming very, very, very annoying.")
+            freakOut = 2
+        elif respond == ("use elevator"):
+            print ("")
+            raw_input ("What specifically would you like to do?")
+        elif respond == ("exit elevator")and progress == 0:
+            print ("")
+            raw_input ("You have exited the elevator and are now looking")
+            raw_input ("back at the room with errie white lights")
+            raw_input ("lining the ceiling, a few flicker as you look on")
+            raw_input ("There are two rows of beds on either side of the room.")
+            raw_input ("Eight beds in total each with pristine white sheets")
+            raw_input ("There is a pillow at the head of each bed and a chest at the foot.")
             break
             in_elevator = False
-        elif y == ("press up")and i == 1:
+        elif respond == ("press up")and progress == 1:
             print ("")
-            print ("The doors slowly open revealing that")
-            print ("the elevator is stuck, the first floor is")
-            print ("only visible through the top half of the elevator.")
-            i = i + 1
-        elif y == ("exit elevator")and i == 2:
+            raw_input ("The doors slowly open revealing that the")
+            raw_input ("elevator is stuck, only the bottom of the door is")
+            raw_input ("visible through the top half of the elevator.")
+            progress = progress + 1
+        elif respond == ("exit elevator")and progress == 2:
             print ("")
-            print ("You have now exited the elevator and")
-            print ("are on the first floor.")
+            raw_input ("You have now exited the elevator and")
+            raw_input ("are on the first floor.")
             in_elevator = False
             break
         else:
             print ("")
-            print ("I'm sorry I do not understand...")
+            raw_input ("I'm sorry I do not understand...")
+            
     
+print("You open the door to reviel an open elevator.")
+print("There are only 2 buttons in the elevevator, one to go up and one to go down.")
